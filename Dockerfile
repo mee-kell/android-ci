@@ -16,7 +16,8 @@ RUN unzip -d cmdline-tools cmdline-tools.zip
 # RUN mv cmdline-tools tools || true
 # RUN popd
 # RUN popd
-ENV PATH=$PATH:${ANDROID_HOME}/cmdline-tools/tools/bin/
+ENV ANDROID_HOME=$PWD/cmdline-tools
+ENV PATH=$PATH:${ANDROID_HOME}/tools/bin/
 RUN sdkmanager --version
 RUN yes | sdkmanager --licenses || true
 RUN sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}"
