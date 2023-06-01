@@ -1,13 +1,11 @@
-FROM openjdk:8-jdk
+FROM openjdk:11-jdk
 
-MAINTAINER Seanghay
-
-ENV ANDROID_COMPILE_SDK=29
-ENV ANDROID_BUILD_TOOLS=29.0.2
-ENV ANDROID_SDK_TOOLS=4333796
+ENV ANDROID_COMPILE_SDK=33
+ENV ANDROID_BUILD_TOOLS=30.0.3
+ENV ANDROID_SDK_TOOLS=7583922
 
 RUN apt-get --quiet update --yes
-RUN apt-get --quiet install --yes wget tar unzip lib32stdc++6 
+RUN apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
 RUN apt-get -qq install curl
 RUN wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip
 RUN unzip -d android-sdk-linux android-sdk.zip
