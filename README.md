@@ -6,7 +6,7 @@ You can use this image for building your Android app within your CI.
             alt="Pulls"></a> 
 
 ```sh
-docker pull seanghay/android-ci:latest
+docker pull mwl21/drp25
 ```
 
 -----
@@ -14,7 +14,7 @@ docker pull seanghay/android-ci:latest
 ## Usage in GitLab CI
 
 ```yaml
-image: seanghay/android-ci
+image: mwl21/drp25
 
 before_script:
     - chmod +x ./gradlew
