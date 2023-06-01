@@ -16,12 +16,12 @@ RUN unzip -d cmdline-tools cmdline-tools.zip
 # RUN mv cmdline-tools tools || true
 # RUN popd
 # RUN popd
-RUN sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}"
-RUN sdkmanager "platform-tools"
-RUN sdkmanager "build-tools;${ANDROID_BUILD_TOOLS}"
 ENV PATH=$PATH:${ANDROID_HOME}/cmdline-tools/tools/bin/
 RUN sdkmanager --version
 RUN yes | sdkmanager --licenses || true
+RUN sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}"
+RUN sdkmanager "platform-tools"
+RUN sdkmanager "build-tools;${ANDROID_BUILD_TOOLS}"
 ENV GRADLE_USER_HOME=$PWD/.gradle
 # RUN chmod +x ./gradlew
 
